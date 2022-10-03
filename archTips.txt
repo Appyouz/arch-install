@@ -1,0 +1,20 @@
+# To remove unused dependencies
+pacman -Qdtq |  pacman -Rs -
+
+# Seach for package
+sudo pacman -Ss   <query1>  <query2>
+
+# Search for installed package in the system
+sudo pacman -Qs query1>  <query2>
+
+# Search for query in the local database
+ sudo pacman -F query1>  <query2>
+
+# To install local package
+sudo pacman -U path_to_file.pkg.tar.xz  
+
+# To install remote package    
+sudo pacman -U http://www.example.com/repo/example.pkg.tar.xz
+
+# Faillock reset in case you get sudo try again wrong password
+faillock --user <username> --reset
