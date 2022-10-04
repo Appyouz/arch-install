@@ -41,12 +41,12 @@ locale-gen
 echo "LANG=en_US.UTF-8" (gt)(gt) /etc/locale.conf
 
 --setting hostname
-echo "arch" (gt) /etc/hostname
+echo "<yourhostname>" (gt) /etc/hostname
 nano /etc/hosts 
 (type in that file)
 127.0.0.1 localhost
 ::1  localhost
-127.0.1.1 arch.localdomain arch
+127.0.1.1 <yourhostname>.localdomain <yourhostname>
 
 --install required packages
 pacman -S networkmanager network-manager-applet intel-ucode(or amd-ucode) wireless_tools bluez bluez-utils
@@ -78,10 +78,10 @@ GRUB_DISABLE_OS_PROBER=false
 grub-mkconfig -o /boot/grub/grub.cfg
 
 --Install display drivers
-sudo pacman -S xorg nvidia nvidia-settings
+sudo pacman -S xorg-server xorg-xinit libx11 libxinerama libxft webkit2gtk xf86-video-intel mesa
 
 --Install sound drivers
-sudo pacman -S pulseaudio pulseaudio-alsa alsa-utils 
+sudo pacman -S  pipewire pipewire-jack pipewire-utils
 
 --Install Desktop Environment
 sudo pacman -S gnome firefox git ttf-freefont vlc
