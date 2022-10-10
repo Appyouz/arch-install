@@ -1,6 +1,16 @@
 # To remove unused dependencies
 pacman -Qtdq | pacman -Rns -
 
+# Detecting more unneeded packages
+pacman -Qqd | pacman -Rsu --print -
+
+
+# Removing everything but essential packages
+pacman -D --asdeps $(pacman -Qqe) // DO NOT TRY THIS AT HOME
+
+
+
+
 # Seach for package
 sudo pacman -Ss   <query1>  <query2>
 
