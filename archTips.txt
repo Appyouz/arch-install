@@ -1,5 +1,5 @@
 # To remove unused dependencies
-pacman -Qdtq |  pacman -Rs -
+pacman -Qtdq | pacman -Rns -
 
 # Seach for package
 sudo pacman -Ss   <query1>  <query2>
